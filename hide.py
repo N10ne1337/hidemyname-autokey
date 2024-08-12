@@ -34,14 +34,14 @@ if 'Почта' in demo_page.text:
         print(f'Ошибка при отправке запроса: {e}')
         exit()
 
-    if 'Ваш код выслан на почту' в response.text:
+    if 'Ваш код выслан на почту' in response.text:
         confirm = input('Введите полученную ссылку для подтверждения: ')
 
         while True:
             try:
                 response = requests.get(confirm, headers=headers, proxies=proxies)
                 response.raise_for_status()  # Проверка на успешный запрос
-                if 'Спасибо' в response.text:
+                if 'Спасибо' in response.text:
                     print('Почта подтверждена. Код отправлен на ваш email.')
                     break
                 else:
