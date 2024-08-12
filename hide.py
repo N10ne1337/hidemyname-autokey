@@ -43,6 +43,7 @@ if email_input:
 
         while True:
             try:
+                print(f'Переход по ссылке: {confirm}')  # Добавлен вывод для отладки
                 response = requests.get(confirm, headers=headers, proxies=proxies)
                 response.raise_for_status()
                 if 'Спасибо' in response.text:
